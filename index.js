@@ -18,12 +18,12 @@ $(function () {
     },
     riverAttr = {
         fill: "#57f",
-        stroke: "#333",
-        "stroke-width": 1,
+        stroke: "#57f",
+        "stroke-width": 3,
         "stroke-linejoin": "round"
     };
 
-    var year = 2009;
+    var year = 2002;
 
     $(".period").hide();
     $("#" + year).show();

@@ -15,18 +15,32 @@ $(function () {
         stroke: "#333",
         "stroke-width": 1,
         "stroke-linejoin": "round"
+    },
+    riverAttr = {
+        fill: "#57f",
+        stroke: "#333",
+        "stroke-width": 1,
+        "stroke-linejoin": "round"
     };
 
-    R.path(svg.border).attr(attr);
-    R.path(svg.lanciennelorette).attr(bgAttr);
-    R.path(svg.wendake).attr(bgAttr);
-    var qc = {
-        lacitelimoilou: R.path(svg.lacitelimoilou).attr(attr),
-        lesrivieres: R.path(svg.lesrivieres).attr(attr),
-        saintefoysillerycaprouge: R.path(svg.saintefoysillerycaprouge).attr(attr),
-        charlesbourg: R.path(svg.charlesbourg).attr(attr),
-        beauport: R.path(svg.beauport).attr(attr),
-        lahautesaintcharles: R.path(svg.lahautesaintcharles).attr(attr),
+    var year = 2009;
+
+    $(".period").hide();
+    $("#" + year).show();
+
+    R.path(svg[year].border).attr(attr);
+    R.path(svg[year].river).attr(riverAttr);
+
+    var qc = {};
+    for (var name in svg[year].boroughs) {
+        var p = R.path(svg[year].boroughs[name]).attr(attr);
+        if (year == 2009) {
+            qc[name] = p;
+        }
+    }
+    
+    for (var name in svg[year].nonboroughs) {
+        R.path(svg[year].nonboroughs[name]).attr(bgAttr);
     }
     
     var current = null;
@@ -39,6 +53,7 @@ $(function () {
             ar[0].style.cursor = "pointer";
 
             ar[0].onmouseover = function () {
+
                 $(".period-info").hide();
                 if (current) {
                     qc[current].animate({fill: "#aaa", stroke: "#333"}, 150);

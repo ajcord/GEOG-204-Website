@@ -433,6 +433,7 @@ Wikimedia image(s):
 https://commons.wikimedia.org/wiki/File:Rivi%C3%A8re_Saint-Charles_vue_du_pont_Drouin.jpg
 https://commons.wikimedia.org/wiki/File:Beauport_QC.JPG
 https://commons.wikimedia.org/wiki/File:Lac_Saint-Charles.JPG
+https://en.wikipedia.org/wiki/File:Quebec_-_Arrondissements.svg
 
 
 Creative Commons Legal Code

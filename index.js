@@ -24,11 +24,11 @@ $(function () {
     }
     
     var current = null;
-    for (var arrondissiment in qc) {
+    for (var arrondissement in qc) {
 
-        qc[arrondissiment].color = Raphael.getColor(0.9);
+        qc[arrondissement].color = Raphael.getColor(0.9);
 
-        (function (ar, arrondissiment) {
+        (function (ar, arrondissement) {
 
             ar[0].style.cursor = "pointer";
 
@@ -40,8 +40,8 @@ $(function () {
                 ar.animate({fill: ar.color, stroke: "#000"}, 150);
                 ar.toFront();
                 R.safari();
-                $("#" + arrondissiment).show();
-                current = arrondissiment;
+                $("#" + arrondissement).show();
+                current = arrondissement;
             };
 
             ar[0].onmouseout = function () {
@@ -50,6 +50,6 @@ $(function () {
                 R.safari();
             };
 
-        })(qc[arrondissiment], arrondissiment);
+        })(qc[arrondissement], arrondissement);
     }
 });

@@ -9,14 +9,20 @@ $(function () {
         stroke: "#333",
         "stroke-width": 1,
         "stroke-linejoin": "round"
+    },
+    bgAttr = {
+        fill: "#fff",
+        stroke: "#333",
+        "stroke-width": 1,
+        "stroke-linejoin": "round"
     };
 
     R.path(svg.border).attr(attr);
+    R.path(svg.lanciennelorette).attr(bgAttr);
+    R.path(svg.wendake).attr(bgAttr);
     var qc = {
         lacitelimoilou: R.path(svg.lacitelimoilou).attr(attr),
-        lanciennelorette: R.path(svg.lanciennelorette).attr(attr),
         lesrivieres: R.path(svg.lesrivieres).attr(attr),
-        wendake: R.path(svg.wendake).attr(attr),
         saintefoysillerycaprouge: R.path(svg.saintefoysillerycaprouge).attr(attr),
         charlesbourg: R.path(svg.charlesbourg).attr(attr),
         beauport: R.path(svg.beauport).attr(attr),
@@ -33,9 +39,10 @@ $(function () {
             ar[0].style.cursor = "pointer";
 
             ar[0].onmouseover = function () {
+                $(".period-info").hide();
                 if (current) {
                     qc[current].animate({fill: "#aaa", stroke: "#333"}, 150);
-                    $("#" + current).hide();
+                    $(".arrondissement-info").hide();
                 }
                 ar.animate({fill: ar.color, stroke: "#000"}, 150);
                 ar.toFront();
@@ -45,9 +52,12 @@ $(function () {
             };
 
             ar[0].onmouseout = function () {
+                $(".period-info").show();
                 ar.animate({fill: "#aaa", stroke: "#333"}, 150);
                 ar.toFront();
                 R.safari();
+                $(".arrondissement-info").hide();
+                current = null;
             };
 
         })(qc[arrondissement], arrondissement);

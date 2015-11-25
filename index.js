@@ -26,6 +26,12 @@ function drawArrondissements(year) {
         "stroke-width": 2,
         "stroke-linejoin": "round"
     },
+    highlightAttr = {
+        fill: "#5c5",
+        stroke: "#333",
+        "stroke-width": 2,
+        "stroke-linejoin": "round"
+    },
     riverAttr = {
         fill: "#57f",
         stroke: "#57f",
@@ -41,7 +47,14 @@ function drawArrondissements(year) {
 
     var qc = {};
     for (var name in svg[year].boroughs) {
-        var p = R.path(svg[year].boroughs[name]).attr(attr);
+
+        // Check to see if we should highlight this path
+        var currentAttr = attr;
+        if ($.inArray(name, svg[year].highlight) != -1) {
+            currentAttr = highlightAttr;
+        }
+        
+        var p = R.path(svg[year].boroughs[name]).attr(currentAttr);
         if (year == 2009) {
             qc[name] = p;
         }

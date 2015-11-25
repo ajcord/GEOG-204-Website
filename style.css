@@ -12,6 +12,10 @@ h1 {
     padding-top: 20px;
 }
 
+h2 {
+    font-size: 2em;
+}
+
 .row {
     display: flex;
     flex-wrap: wrap;

@@ -4,9 +4,12 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <title>GEOG 204 Assignment 4: Quebec City</title>
+  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
+
   <script src="raphael.js" type="text/javascript" charset="utf-8"></script>
 </head>
 
@@ -18,6 +21,18 @@
   </div>
 
   <div class="container-fluid">
+
+    <div id="timeline">
+      <div id="timeline-bar"></div>
+      <!-- <a href="#1" title="1608" style="left: 0"></a> -->
+      <a href="#1909" title="1909" style="left: 0%"></a>
+      <a href="#1970" title="1970" style="left: calc(57.547169811% - 10px)"></a>
+      <a href="#2002" title="2002" style="left: calc(87.735849057% - 10px)"></a>
+      <a href="#2006" title="2006" style="left: calc(91.509433962% - 10px)"></a>
+      <a href="#2009" title="2009" style="left: calc(94.339622642% - 10px)"></a>
+      <a href="#present" title="Present" style="left: calc(100% - 10px)"></a>
+    </div>
+
     <div class="row">
 
       <div id="left-arrow" class="arrow disabled col-md-1 col-sm-2 col-xs-2 col-md-offset-1" title="Previous time period">
@@ -50,8 +65,8 @@
           <div class="period-info">
             <h2>Starting Small</h2>
             <p>
-              Originally, Québec &mdash; the city's name before the mergers &mdash;
-              was divided into two sectors:
+              Québec &mdash; the city's name before the mergers &mdash;
+              was originally divided into two sectors:
               Basse-Ville (Lower Town) and Haute-Ville (Upper Town).
               As the names suggest, this division was based primarily on
               the city's main geographical feature: a promontory overlooking
@@ -101,10 +116,8 @@
             <p>
               In 2002, as part of a controversial mass municipal reorganization in the province,
               Quebec City was formed from the merger of Québec with many nearby towns.
-              They were combined into 10 boroughs:
-              La Cité, Les Rivières, Sainte-Foy&ndash;Sillery, Charlesbourg,
-              Beauport, Limoilou, La Haute-Saint-Charles, Laurentien,
-              Saint-Augustin-de-Desmaures, and L'Ancienne-Lorette.
+              The towns became neighborhoods, which were combined to form
+              several large boroughs.
               The CUQ was defunct and replaced with
               the Communauté métropolitaine de Québec (CMQ).
             </p>

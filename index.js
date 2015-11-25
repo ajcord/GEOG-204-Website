@@ -32,6 +32,13 @@ function drawArrondissements(year) {
         "stroke-width": 2,
         "stroke-linejoin": "round"
     },
+    removeAttr = {
+        fill: "#fff",
+        stroke: "#f00",
+        "stroke-width": 2,
+        "stroke-dasharray": "--",
+        "stroke-linejoin": "round"
+    },
     riverAttr = {
         fill: "#57f",
         stroke: "#57f",
@@ -62,6 +69,10 @@ function drawArrondissements(year) {
     
     for (var name in svg[year].nonboroughs) {
         R.path(svg[year].nonboroughs[name]).attr(bgAttr);
+    }
+    
+    for (var name in svg[year].removed) {
+        R.path(svg[year].removed[name]).attr(removeAttr);
     }
     
     var current = null;
@@ -98,13 +109,17 @@ function drawArrondissements(year) {
 
         })(qc[arrondissement], arrondissement);
     }
+
+    // Highlight the current timeline dot
+    $("#timeline > a").removeClass("active");
+    $("#timeline > a[href='#" + year + "']").addClass("active");
 }
 
 $(function () {
 
     $("#left-arrow").click(function() {
         currentYearIndex = Math.max(currentYearIndex - 1, 0);
-        currentYear = Object.keys(svg)[currentYearIndex];
+        var currentYear = Object.keys(svg)[currentYearIndex];
         drawArrondissements(currentYear);
 
         if (currentYearIndex == 0) {
@@ -116,11 +131,29 @@ $(function () {
 
     $("#right-arrow").click(function() {
         currentYearIndex = Math.min(currentYearIndex + 1, Object.keys(svg).length - 1);
-        currentYear = Object.keys(svg)[currentYearIndex];
+        var currentYear = Object.keys(svg)[currentYearIndex];
         drawArrondissements(currentYear);
 
         if (currentYearIndex == Object.keys(svg).length - 1) {
             $("#right-arrow").addClass("disabled");
+        } else {
+            $("#left-arrow").removeClass("disabled");
+        }
+    });
+
+    $("#timeline > a").click(function() {
+        var currentYear = this.href.substring(this.href.lastIndexOf("#") + 1);
+        currentYearIndex = Object.keys(svg).indexOf(currentYear);
+        drawArrondissements(currentYear);
+
+        if (currentYearIndex == Object.keys(svg).length - 1) {
+            $("#right-arrow").addClass("disabled");
+        } else {
+            $("#right-arrow").removeClass("disabled");
+        }
+
+        if (currentYearIndex == 0) {
+            $("#left-arrow").addClass("disabled");
         } else {
             $("#left-arrow").removeClass("disabled");
         }

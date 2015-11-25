@@ -11,6 +11,34 @@ body {
     text-shadow: 0 0 10px #000;
 }
 
+#timeline {
+    padding: 10px 0;
+    margin: 10px 10px;
+    position: relative;
+}
+
+#timeline-bar {
+    border: 1px solid #555;
+    height: 0;
+}
+
+#timeline > a {
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #f64;
+    position: absolute;
+    top: 0;
+}
+
+#timeline > a.active {
+    background-color: #04c;
+}
+
+#timeline > a:hover {
+    background-color: #c40;
+}
+
 h1 {
     margin-top: 0;
     padding-top: 20px;
@@ -48,6 +76,7 @@ svg {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 999;
 }
 
 @media(max-width:34em) {
@@ -63,6 +92,7 @@ svg {
 
 .arrow:hover:not(.disabled) {
     background-color: rgba(0, 0, 0, 0.1);
+    color: #333;
 }
 
 footer {

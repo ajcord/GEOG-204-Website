@@ -1,7 +1,11 @@
+body {
+    background-color: #eee;
+}
+
 .page-header {
     background-image: url(images/banner.jpg);
     background-position: center;
-    margin-top: 0;
+    margin: 0;
     padding-top: 20px;
     color: white;
     text-shadow: 0 0 10px #000;
@@ -19,6 +23,8 @@ h2 {
 .row {
     display: flex;
     flex-wrap: wrap;
+    background-color: #fff;
+    padding: 20px 0;
 }
 
 .period {
@@ -57,4 +63,12 @@ svg {
 
 .arrow:hover:not(.disabled) {
     background-color: rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    color: #999;
+    font-size: 0.8em;
+    padding: 20px;
+    background-color: #eee;
 }

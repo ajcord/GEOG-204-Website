@@ -1,19 +1,29 @@
-$(function () {
+// Stores the index of the current year in the svg object
+var currentYearIndex = 0;
 
-    var R = Raphael("paper", "100%", "100%");
+var R = Raphael("paper", "100%", "100%");
+R.setViewBox(0, 0, 1133, 1091);
 
-    R.setViewBox(0, 0, 1133, 1091);
+/**
+ * Draws a vector map of the arrondissements for the given year.
+ * Gets data from the global svg object.
+ *
+ * @param      {(number|string)}  year    The year to draw
+ */
+function drawArrondissements(year) {
+
+    R.clear();
     
     var attr = {
         fill: "#aaa",
         stroke: "#333",
-        "stroke-width": 1,
+        "stroke-width": 2,
         "stroke-linejoin": "round"
     },
     bgAttr = {
         fill: "#fff",
         stroke: "#333",
-        "stroke-width": 1,
+        "stroke-width": 2,
         "stroke-linejoin": "round"
     },
     riverAttr = {
@@ -22,8 +32,6 @@ $(function () {
         "stroke-width": 3,
         "stroke-linejoin": "round"
     };
-
-    var year = 2002;
 
     $(".period").hide();
     $("#" + year).show();
@@ -77,4 +85,33 @@ $(function () {
 
         })(qc[arrondissement], arrondissement);
     }
+}
+
+$(function () {
+
+    $("#left-arrow").click(function() {
+        currentYearIndex = Math.max(currentYearIndex - 1, 0);
+        currentYear = Object.keys(svg)[currentYearIndex];
+        drawArrondissements(currentYear);
+
+        if (currentYearIndex == 0) {
+            $("#left-arrow").addClass("disabled");
+        } else {
+            $("#right-arrow").removeClass("disabled");
+        }
+    });
+
+    $("#right-arrow").click(function() {
+        currentYearIndex = Math.min(currentYearIndex + 1, Object.keys(svg).length - 1);
+        currentYear = Object.keys(svg)[currentYearIndex];
+        drawArrondissements(currentYear);
+
+        if (currentYearIndex == Object.keys(svg).length - 1) {
+            $("#right-arrow").addClass("disabled");
+        } else {
+            $("#left-arrow").removeClass("disabled");
+        }
+    });
+
+    drawArrondissements(Object.keys(svg)[0]);
 });

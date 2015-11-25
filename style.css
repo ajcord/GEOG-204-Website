@@ -44,7 +44,7 @@ svg {
     justify-content: center;
 }
 
-@media(min-width:34em){
+@media(max-width:34em) {
     .arrow {
         width: 16.5%;
     }

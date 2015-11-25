@@ -26,9 +26,10 @@ THE SOFTWARE.
 
 --------------------------------------------------------------------------------
 
-Wikipedia map and Wikimedia image(s):
+Wikipedia and Wikimedia images:
 
 https://en.wikipedia.org/wiki/File:Quebec_Arrondissements.svg
+https://en.wikipedia.org/wiki/File:Quebec_-_Arrondissements.svg
 https://commons.wikimedia.org/wiki/File:Ch%C3%A2teau_Frontenac_02.jpg
 https://commons.wikimedia.org/wiki/File:Complexe_Jules_Dallaire.jpg
 
@@ -428,12 +429,12 @@ Creative Commons may be contacted at creativecommons.org.
 
 --------------------------------------------------------------------------------
 
-Wikimedia image(s):
+Wikipedia and Wikimedia images:
 
 https://commons.wikimedia.org/wiki/File:Rivi%C3%A8re_Saint-Charles_vue_du_pont_Drouin.jpg
 https://commons.wikimedia.org/wiki/File:Beauport_QC.JPG
 https://commons.wikimedia.org/wiki/File:Lac_Saint-Charles.JPG
-https://en.wikipedia.org/wiki/File:Quebec_-_Arrondissements.svg
+https://en.wikipedia.org/wiki/File:79_-_Qu%C3%A9bec_-_Juin_2009.jpg
 
 
 Creative Commons Legal Code

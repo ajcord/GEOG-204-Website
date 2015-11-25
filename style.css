@@ -44,6 +44,12 @@ svg {
     justify-content: center;
 }
 
+@media(min-width:34em){
+    .arrow {
+        width: 16.5%;
+    }
+}
+
 .arrow.disabled {
     color: #bbb;
     cursor: default;

@@ -17,9 +17,28 @@ body {
     position: relative;
 }
 
-#timeline-bar {
-    border: 1px solid #555;
+.timeline-bar {
     height: 0;
+    display: inline-block;
+    position: absolute;
+}
+
+#timeline-bar-1 {
+    border: 1px solid #555;
+    width: 5%;
+    left: 0;
+}
+
+#timeline-bar-2 {
+    border: 1px dashed #555;
+    width: 10%;
+    left: 5%;
+}
+
+#timeline-bar-3 {
+    border: 1px solid #555;
+    width: 85%;
+    left: 15%;
 }
 
 #timeline > a {

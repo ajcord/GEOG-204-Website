@@ -13,8 +13,16 @@ body {
 
 #timeline {
     padding: 10px 0;
-    margin: 10px 10px;
+    margin: 10px 10px 20px 10px;
     position: relative;
+}
+
+#timeline > a > span {
+    position: absolute;
+    top: 20px;
+    left: -15%;
+    color: black;
+    font-size: 0.8em;
 }
 
 .timeline-bar {

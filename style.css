@@ -5,6 +5,7 @@ body {
 .page-header {
     background-image: url(images/banner.jpg);
     background-position: center;
+    background-size: cover;
     margin: 0;
     padding-top: 20px;
     color: white;
